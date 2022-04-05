@@ -1,24 +1,32 @@
-\documentclass{article}
-\usepackage[a4paper, total={6in, 8in}, margin=0.5in]{geometry}
-\usepackage{tfrupee}
+\documentclass[12pt, twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[margin = 1.1in]{geometry}
+\usepackage{float}
 \usepackage{graphicx}
-\usepackage[export]{adjustbox}
 \graphicspath{{images/}}
-\title{\huge\textbf{AI1110 Assignment1}}
-\author{\huge\textbf{Malothu Avinash,Ai21btech11018}}
-\date{\huge\textbf{March 2022}}
+\setlength{\columnsep}{0.75cm}
+\usepackage{hyperref}
+\usepackage{tfrupee}
+\hypersetup{
+colorlinks=true,
+    linkcolor= red,
+    }
+
+\title{AI1110 Assignment 1}
+\author{MALOTHU AVINASH AI21BTECH11018}
+\date{March 2022}
 
 \begin{document}
-
 \maketitle
-\includegraphics[width=\textwidth,frame]{question.png}
+\textbf{Q5(B):} Rekha opened a recurring deposit account for 20 months. The rate of interest is 9\% per annum and Rekha receives \rupee441 as interest at the time of maturity.
+Find the amount Rekha deposited each month.
+\\\textbf{Solution:}\\
+According to given question
+\\Rekha opened a recurring deposit account for 20 months(n),
+\\Rate of interest(r) is 9\% per annum,and Rekha receives \rupee 441 as interest at the time of maturity.
 
-{\huge
-Given,
-Rekha opened a recurring deposit account for 20 months(n),
-Rate of interest(r) is 9\% per annum,and Rekha receives \rupee 441 as interest at the time of maturity.
-\\Let Amount deposited each month is \rupee x}
-{\huge\\$$ From\;simple\;interest\;formula\;I=p\cdot\ t\cdot\frac{r}{100}
+{\\$$ From\;simple\;interest\;formula\;I=p\cdot\ t\cdot\frac{r}{100}
 \\
 \\
 $$Total\;Interest(i) = x\cdot\frac{1}{12}\cdot\frac{9}{100} + x\cdot\frac{2}{12}\cdot\frac{9}{100} + x\cdot\frac{3}{12}\cdot\frac{9}{100} +
@@ -30,12 +38,8 @@ $$Total\;Interest(i) = x\cdot\frac{1}{12}\cdot\frac{9}{100} + x\cdot\frac{2}{12}
 \\
 \\ $$x = \frac{441\cdot1200\cdot2}{9\cdot20\cdot21}$$
 \\
-\\$$ Finally\;we\;get \; x = 280 \;and\;c\;code\;output\;as\;follows
+\\$$ Finally\;we\;get \; x = 280 \\\;c\;code\;output\;as\;follows
 \\ }
-
-{\includegraphics[width=\textwidth]{solution.png}}
-
-
-
+\includegraphics[width=\textwidth]{solution.png}
 
 \end{document}
