@@ -1,116 +1,101 @@
-\documentclass[12pt, twocolumn]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage[margin = 1.1in]{geometry}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage[super]{nth}
-\graphicspath{{images/}}
-\setlength{\columnsep}{0.75cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{AI1110 Assignment 2}
-\author{MALOTHU AVINASH AI21BTECH11018}
-\date{April 2022}
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\usepackage[super]{nth}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 2}% \\ Indian Institute of Technology Hyderabad} 
+\author{Malothu Avinash \\ AI21BTECH11018}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
 
 \begin{document}
-\maketitle
-\textbf{Question 4} 
-\\Using properties of determinants prove that:
-\\
-\begin{vmatrix}
-x &x(x^2+1) &x+1\\
-y &y(y^2+1) &y+1\\ 
-z &z(z^2+1) &z+1
-\end{vmatrix}
-$=(x-y)(y-z)(z-x)(x+y+z)$
-\\
-\\
-\textbf{Solution:}
-\\
-\\
-M=
-\begin{vmatrix}
-x &x(x^2+1) &x+1\\
-y &y(y^2+1) &y+1\\
-z &z(z^2+1) &z+1
-\end{vmatrix}
-\\
-\\Using Split property of determinant at column 3 we get 
-\\
-\\M=
-\begin{vmatrix}
-x &x(x^2+1) &x\\
-y &y(y^2+1) &y\\
-z &z(z^2+1) &z
-\end{vmatrix}
-+
-\begin{vmatrix}
-x &x(x^2+1) &1\\
-y &y(y^2+1) &1\\
-z &z(z^2+1) &1
-\end{vmatrix}
-\\
-\\ As \nth{1} and \nth{3} coloumns of \nth{1} determinant are same it's value becomes zero then
-\\
-\\M=
-\begin{vmatrix}
-x &x^3+x &1\\
-y &y^3+y &1\\
-z &z^3+z &1
-\end{vmatrix}
-\\
-\\Using Split property of determinant at column 2 we get 
-\\
-\\M=
-\begin{vmatrix}
-x &x^3 &1\\
-y &y^3 &1\\
-z &z^3 &1
-\end{vmatrix}
-+
-\begin{vmatrix}
-x &x &1\\
-y &y &1\\
-z &z &1
-\end{vmatrix}
-\\
-\\ Similarly as \nth{1} and \nth{2} coloumns of \nth{2} determinant are same it's value becomes zero then
-\\
-\\M=
-\begin{vmatrix}
-x &x^3 &1\\
-y &y^3 &1\\
-z &z^3 &1
-\end{vmatrix}
-\\
-\\Using row transformation properties i.e changing row1 to (row1-row2) and row2 to (row2-row3) we get
-\\
-\\M=
-\begin{vmatrix}
-x-y &x^3-y^3 &0\\
-y-z &y^3-z^3 &0\\
-z &z^3 &1
-\end{vmatrix}
-\\
-\\Evaluating the determinant of matrix at (3,3) position we get value of determinant as 
-\\
-\begin{sol}
-\\	&= (y^3-z^3)(x-y)-(y-z)(x^3-y^3) \\
-\\
-	&=(y-z)(y^2+z^2+y.z)(x-y)-(y-z)(x^2+y^2+x.y) \\
-\\
-	&=(y-z)(x-y)[y^2+z^2+y.z-x^2-y^2-x.y]\\
-\\
-	&=(y-z)(x-y)[(z-x)(z+x)+y(z-x)]\\
-\\
-	&=(y-z)(x-y)(z-x)[z+x+y]
-\end{sol}
-\\By rearranging the terms we get the value of determinant as
-\\&=(x-y)(y-z)(z-x)(x+y+z)
-\\=R.H.S
-\\Hence proved!
-\\THe following is a result of c code which takes inputs for x,y,z and checks whether both LHS and RHS are equal
-\\
-\includegraphics[width=9cm]{solution.png}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+% \logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+    Using properties of determinants prove that:
+    \begin{align}
+    \mydet{x & x(x^2+1) & x+1\\y & y(y^2+1) & y+1\\z & z(z^2+1) & z+1} = (x-y)(y-z)(z-x)(x+y+z)
+    \end{align}
+\end{frame}
+
+\section{Answer}
+\begin{frame}{Answer}
+    \begin{align}
+    M = \mydet{x & x(x^2+1) & x+1\\y & y(y^2+1) & y+1\\z & z(z^2+1) & z+1}
+    \end{align}
+Using Split property of determinant at column 3 we get
+    \begin{align}
+        M = \mydet{x & x(x^2+1) & x\\y & y(y^2+1) & y\\z & z(z^2+1) & z}+ \mydet{x & x(x^2+1) & 1\\y & y(y^2+1) & 1\\z & z(z^2+1) & 1}
+    \end{align}
+As \nth{1} and \nth{3} coloumns of \nth{1} determinant are same it's value becomes zero then
+\end{frame}
+\begin{frame}
+
+    \begin{align}
+    M = \mydet{x & x^3+x & 1\\y & y^3+y & 1\\z & z^3+z & 1}
+    \end{align}
+Using Split property of determinant at column 2 we get 
+    \begin{align}
+    M = \mydet{x & x^3 & 1\\y & y^3 & 1\\z & z^3 & 1}+\mydet{x & x & 1\\y & y & 1\\z & z & 1}
+    \end{align}
+    Similarly as \nth{1} and \nth{2} coloumns of \nth{2} determinant are same it's value becomes zero then
+\end{frame}
+\begin{frame}
+\begin{align}
+     M = \mydet{x & x^3 & 1\\y & y^3 & 1\\z & z^3 & 1}
+\end{align}
+     Using row transformation properties i.e changing row1 to (row1-row2) and row2 to (row2-row3) we get
+     \begin{align}
+    M = \mydet{x-y & x^3-y^3 & 0\\y-z & y^3-z^3 & 0\\z & z^3 & 1}
+     \end{align}
+     \end{frame}
+     \begin{frame}
+              Evaluating the determinant of matrix at (3,3) position we get value of determinant as 
+     \begin{align}
+        & = (y^3-z^3)(x-y)-(y-z)(x^3-y^3)\\
+        & =(y-z)(y^2+z^2+y.z)(x-y)-(y-z)(x^2+y^2+x.y)\\
+        & =(y-z)(x-y)[y^2+z^2+y.z-x^2-y^2-x.y]\\
+        & =(y-z)(x-y)[(z-x)(z+x)+y(z-x)]\\
+        & =(y-z)(x-y)(z-x)[z+x+y]\\
+        & =(x-y)(y-z)(z-x)(x+y+z)\\
+        & =R.H.S
+     \end{align}
+     Hence proved!
+     \end{frame}
+\begin{frame}{Code Output:}
+The following is a result of c code which takes inputs for x,y,z and checks whether both LHS and RHS are equal
+\includegraphics[width=8cm]{solution.png}
+\end{frame}
 
 \end{document}
