@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\usepackage[super]{nth}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 5}% \\ Indian Institute of Technology Hyderabad} 
+\author{Malothu Avinash \\ AI21BTECH11018}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+% \logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+Using price's theorem,Derive E(x^2\cdot y^2) = E(x^2)\cdot E(y^2)+2E(xy)
+\end{frame}
+
+\section{Answer}
+\begin{frame}{Answer}
+From price's theorem\\
+
+  \begin{align}
+      &\frac{\partial^n I(\mu)}{\partial \mu^n}=E(\frac{\partial^2^n g(x,y)}{\partial^n x\cdot \partial^n y})\\
+      &Let\;n=1\;and\;g(x,y)=x^2y^2\\
+      &\frac{\partial I(\mu)}{\partial \mu}=E(\frac{\partial^2 (x^2y^2)}{\partial x\cdot \partial y})\\
+      &\frac{\partial I(\mu)}{\partial \mu}=4E(xy)\\
+      &\frac{\partial I(\mu)}{\partial \mu}=4\mu\\
+      &I(\mu)=2\mu^2+ I(0)
+  \end{align}
+\end{frame}
+\begin{frame}
+\begin{align}
+      &As\;I(\mu)=E(x^2\cdot y^2)\\
+      &at\;\mu=0\; random\;variables\;x\;and\;y\;are\;independent\\
+      &\implies I(0)=E(x^2)\cdot E(y^2)\\
+      & From I(\mu)=2\mu^2+ I(0)\\
+      &E(x^2\cdot y^2) = 2[E(x\cdot y)]^2+E(x^2)\cdot E(y^2)\\
+      &\therefore E(x^2\cdot y^2) = E(x^2)\cdot E(y^2)+2[E(x\cdot y)]^2\\
+\end{align}
+\end{frame}
+
+\end{document}
